@@ -1,5 +1,7 @@
 # src/rice_ml/distances.py
 
-def euclidean_distance(a, b):
-    """Compute the Euclidean distance between two lists of numbers."""
-    return sum((x - y) ** 2 for x, y in zip(a, b)) ** 0.5
+from typing import Sequence
+import math
+
+def euclidean_distance(a: Sequence[float], b: Sequence[float]) -> float:
+    return math.sqrt(sum((x - y) ** 2 for x, y in zip(a, b)))
